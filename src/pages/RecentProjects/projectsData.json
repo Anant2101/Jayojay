@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "title": "Roofing Projects",
+    "name": "Ramesh Yadav",
+    "description": "Our project showcases our expertise in creating durable weather-resistant roofs tailored to client specifications. We used premium materials and cutting-edge techniques, ensuring long-lasting protection and aesthetic appeal.",
+    "image": "assets/public/1.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": [
+      "assets/public/ItemImg.webp",
+      "assets/public/2.webp",
+      "assets/public/3.webp",
+      "assets/public/Item3.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Living Room Designs",
+    "name": "Ramesh Yadav",
+    "description": "Our elevation projects provide remarkable architectural facades for a seamless blend of functionality and visit impact. These designs enhance the curb appeal and structural integrity making us the best choice for construction in indore.",
+    "image": "assets/public/2.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 3,
+    "title": "Kitchen Interiors",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "assets/public/3.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 4,
+    "title": "Conference Rooms",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "assets/public/2.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 5,
+    "title": "Roofing Projects",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "assets/public/3.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 6,
+    "title": "Living Room Designs",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "assets/public/1.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 7,
+    "title": "Kitchen Interiors",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "assets/public/3.webp",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 8,
+    "title": "Conference Rooms",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "https://via.placeholder.com/300x200",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 9,
+    "title": "Roofing Projects",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "https://via.placeholder.com/300x200",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 10,
+    "title": "Living Room Designs",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "https://via.placeholder.com/300x200",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 11,
+    "title": "Kitchen Interiors",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "https://via.placeholder.com/300x200",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  },
+  {
+    "id": 12,
+    "title": "Conference Rooms",
+    "name": "Ramesh Yadav",
+    "description": "Our floor plan projects are meticulously crafted, balancing space utilization and flow with attention to detail and customized layouts. We optimize each area for comfort, efficiency, and style, reflecting our reputation as the best construction company in Indore.",
+    "image": "https://via.placeholder.com/300x200",
+    "content": "Lorem ipsum dolor sit amet consectetur. Nullam velit ut nunc sed tellus. Morbi sit eget volutpat id nunc. Faucibus quis viverra augue quis. Habitant massa malesuada pellentesque elit.",
+    "additionalImages": ["image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+  }
+]

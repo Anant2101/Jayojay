@@ -1,21 +1,18 @@
+html, body {
+  height: 100%; /* Ensure the body takes the full height */
+  margin: 0; /* Remove default margin */
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure the App takes the full height of the viewport */
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  flex: 1; /* Allow header to grow and take available space */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +21,9 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-footer {
+  background-color: #282c34; /* Same background color as header */
+  color: white; /* Text color for footer */
+  padding: 1rem; /* Add some padding */
+  text-align: center; /* Center the text */
 }
