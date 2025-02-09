@@ -16,10 +16,12 @@ import feasibilityImg from '../../Assets/Services/Project Feasibility.webp';
 import sitePlanningImg from '../../Assets/Services/Site planning.webp';
 import mgmtImg from '../../Assets/Services/Construction management_.webp';
 import materialImg from '../../Assets/Services/Material sourcing_.webp';
+import logo from '../../Assets/Footer/logo.webp'
 
 import firstImg from "../../Assets/Services/Frame 24.webp";
 import secondImg from "../../Assets/Services/Frame 25.webp";
 import thirdImg from "../../Assets/Services/Frame 26.webp";
+import SEO from '../../components/SEO/Seo';
 
 const servicesData = [
     {
@@ -100,8 +102,45 @@ const sliderSettings = {
 };
 
 const Services = () => {
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Jayojay Associates",
+        "url": "https://jayojay-anants-projects.vercel.app/",
+        "logo": { logo },
+        "description": "We are a leading construction and consultation firm with expertise in building design, project management, and architecture.",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Jayojay Associates",
+            "url": "https://jayojay-anants-projects.vercel.app/"
+        },
+        "serviceType": [
+            "Architectural Design",
+            "Project Management",
+            "Structural Engineering",
+            "Interior",
+            "Architecture",
+            "Material Sourcing",
+            "Real Estate",
+            "Renovation",
+            "Construction Consultation"
+        ],
+        "areaServed": {
+            "@type": "Place",
+            "name": "Madhya Pradesh, India"
+        }
+    };
+
+
     return (
         <>
+            <SEO
+                title="Services - Jayojay Associates"
+                description="Affordable and Comprehensive Construction and Pre-Construction Services in India   "
+                keywords="construction company, building consultation, project management, “Affordable and Comprehensive Construction and Pre-Construction Services in India"
+                structuredData={structuredData}
+            />
             {/* Hero Section */}
             <Box
                 sx={{
@@ -154,7 +193,7 @@ const Services = () => {
                             }}
                         >
                             <HomeIcon />
-                            <span style={{ fontFamily: "Roboto", fontSize: "20px", fontWeight: "700" }}>Home</span>
+                            <span style={{ fontFamily: "Roboto", fontSize: "20px", fontWeight: "700", marginLeft: '5px' }}>Home</span>
                         </Link>
                         <Typography sx={{ fontFamily: "Roboto", fontWeight: 300, fontSize: "17px" }}>Services</Typography>
                     </Breadcrumbs>

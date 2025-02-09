@@ -1,11 +1,24 @@
-import React from 'react'
+import { Helmet } from "react-helmet-async";
 
-const Seo = () => {
+const SEO = ({ title, description, keywords, structuredData }) => {
     return (
-        <div>
+        <Helmet>
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta name="keywords" content={keywords} />
+            <meta name="robots" content="index, follow" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={window.location.href} />
+            {structuredData && (
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            )}
+        </Helmet>
+    );
+};
 
-        </div>
-    )
-}
-
-export default Seo
+export default SEO;

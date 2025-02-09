@@ -30,6 +30,7 @@ export const WhoWeAre = () => {
                                 width: { xs: '80%', sm: '80%', md: '100%' },
                                 height: { xs: '100%', sm: '80%', md: '100%' },
                                 objectFit: "contain",
+                                marginLeft: { xs: '-25px', sm: '0px' }
                             }}
                         />
                     </Box>

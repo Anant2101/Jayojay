@@ -26,7 +26,7 @@ export const Navbar = () => {
         <>
             <AppBar position="sticky" sx={{ backgroundColor: '#002D62' }}>
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <img src={Logo} alt="JayOJay Logo" width="150px" height="100%" style={{ cursor: "pointer" }}
+                    <img src={Logo} alt="JayoJay Logo" width="150px" height="100%" style={{ cursor: "pointer" }}
                         onClick={() => navigate("/")} />
                     <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1, justifyContent: 'center', flexDirection: 'row' }}>
                         {menuItems.map(({ label, path }) => (
@@ -45,7 +45,7 @@ export const Navbar = () => {
                         color="inherit"
                         aria-label="menu"
                         onClick={toggleDrawer(true)}
-                        sx={{ display: { xs: 'block', sm: 'none' } }}
+                        sx={{ display: { xs: 'block', sm: 'none', marginRight: '10px' } }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -80,13 +80,11 @@ export const Navbar = () => {
                     onKeyDown={toggleDrawer(false)}
                 >
                     <Box sx={{ height: '5rem', backgroundColor: '#002D62', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-
                         <img
                             src={Logo}
                             alt="Logo"
-                            style={{ width: '60px', height: '50px' }}
+                            style={{ width: '110px', height: '100%' }}
                         />
-                        JayoJay
                     </Box>
                     <List>
                         {menuItems.map(({ label, path }) => (

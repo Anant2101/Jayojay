@@ -8,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import projectsHeroBg from '../../Assets/Projects/projectsHero.webp'
 import projects from "./projectsData.json";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/SEO/Seo";
 
 // const data = [
 //     {
@@ -145,9 +146,45 @@ const RecentProjects = () => {
         navigate(`/details?ids=${id}`);
     };
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Project",
+        "name": "Our Completed Projects",
+        "url": "https://jayojay-anants-projects.vercel.app/",
+        "description": "Explore our portfolio of successful construction and consultation projects, including residential, commercial, and industrial buildings.",
+        "creator": {
+            "@type": "Organization",
+            "name": "Jayojay Associates",
+            "url": "https://jayojay-anants-projects.vercel.app/",
+        },
+        "hasPart": [
+            {
+                "@type": "Project",
+                "name": "Luxury Villa Project",
+                "url": "https://yourwebsite.com/projects/luxury-villa",
+                "description": "A high-end luxury villa designed with modern architecture and premium materials."
+            },
+            {
+                "@type": "Project",
+                "name": "Commercial Office Tower",
+                "url": "https://yourwebsite.com/projects/office-tower",
+                "description": "A state-of-the-art office building with sustainable design elements."
+            }
+        ]
+    }
+
+
+
+
     return (
 
         <>
+            <SEO
+                title="Our Projects - Jayojay Associates"
+                description="Explore our projects"
+                keywords="construction company, building consultation,interior, project management,best construction company in Indore"
+                structuredData={structuredData}
+            />
             <Box
                 sx={{
                     position: "relative",
@@ -268,7 +305,7 @@ const RecentProjects = () => {
                                     alt={project.title}
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom sx={{ fontFamily: "Roboto", fontSize: '25px', color: '#002D62', fontWeight: 700 }}>{project.name}</Typography>
+                                    <Typography gutterBottom sx={{ fontFamily: "Exo", fontSize: '25px', color: '#002D62', fontWeight: 700 }}>{project.name}</Typography>
                                     <Typography gutterBottom sx={{ fontFamily: "Roboto", fontSize: '20px', color: '#002D62', fontWeight: 400 }}>
                                         {project.title}
                                     </Typography>

@@ -303,8 +303,7 @@ export const ContactUsPage = () => {
                                             marginTop: "1rem",
                                         }}
                                     >
-                                        If you are going to use a passage of Lorem Ipsu, you need
-                                        this be sure there isn't anything embarrassing hidden
+                                        For more information or to speak with our team, please contact us today. We are here to help with all your construction needs and look forward to working with you.
                                     </Typography>
                                 </Box>
                             </Box>

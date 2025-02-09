@@ -14,6 +14,7 @@ import {
     Avatar,
 } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
+import logo from '../../Assets/Footer/logo.webp'
 
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
@@ -25,6 +26,7 @@ import contactImg from "../../Assets/Aboutus/about2.webp";
 import firstIcon from "../../Assets/Aboutus/1.webp";
 import secondIcon from "../../Assets/Aboutus/2.webp";
 import thirdcon from "../../Assets/Aboutus/3.webp";
+import SEO from "../../components/SEO/Seo";
 
 const stats = [
     { number: "200+", label: "Projects Delivered" },
@@ -129,8 +131,38 @@ const AboutUs = () => {
         }
     };
 
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Jayojay Associates",
+        "url": "https://jayojay-anants-projects.vercel.app/",
+        "logo": { logo },
+        "description": "We are a leading construction and consultation firm with expertise in building design, project management, and architecture.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91 9669046539",
+            "contactType": "Customer Service",
+            "areaServed": "IN",
+            "availableLanguage": "English, Hindi"
+        },
+        "sameAs": [
+            "https://www.instagram.com/jayojayassociates?igsh=MWE5ajdlbjV4emp4ZA%3D%3D&utm_source=qr",
+            "https://www.linkedin.com/company/yourcompany",
+            "https://twitter.com/yourcompany"
+        ]
+    };
+
+
     return (
+
         <div>
+            <SEO
+                title="About Us - Jayojay Associates"
+                description="Learn more about our construction and consultation services."
+                keywords="construction company, The Jayojay Difference,affordable construction services,turnkey construction,interior, Architecture, project management"
+                structuredData={structuredData}
+            />
             {/* Hero Section */}
             <Box
                 sx={{
@@ -184,7 +216,7 @@ const AboutUs = () => {
                             }}
                         >
                             <HomeIcon />
-                            <span style={{ fontFamily: "Roboto", fontSize: "20px", fontWeight: "700" }}>Home</span>
+                            <span style={{ fontFamily: "Roboto", fontSize: "20px", fontWeight: "700", marginLeft: '5px' }}>Home</span>
                         </Link>
                         <Typography sx={{ fontFamily: "Roboto", fontWeight: 300, fontSize: "17px" }}>About Us</Typography>
                     </Breadcrumbs>
@@ -211,12 +243,13 @@ const AboutUs = () => {
                             sx={{
                                 objectFit: "contain",
                                 width: {
-                                    xs: "80%", // 100% width for extra-small screens
-                                    sm: "80%", // 80% width for small screens and up
+                                    xs: "80%",
+                                    sm: "80%",
                                 },
+                                marginTop: { xs: "2rem", sm: '0px' },
                                 height: {
-                                    xs: "100%", // 100% height for extra-small screens
-                                    sm: "80%", // 80% height for small screens and up
+                                    xs: "100%",
+                                    sm: "80%",
                                 },
                             }}
                         />
@@ -267,7 +300,7 @@ const AboutUs = () => {
                             </Box>
                             <Typography
                                 gutterBottom
-                                sx={{ fontFamily: "Exo", fontWeight: 700, fontSize: "45px" }}
+                                sx={{ fontFamily: "Exo", fontWeight: 700, fontSize: "45px", lineHeight: '60px' }}
                             >
                                 Creating Innovative <br></br>Spaces That Inspire and Endure
                             </Typography>
@@ -278,7 +311,7 @@ const AboutUs = () => {
                                     fontWeight: 400,
                                     fontSize: "17px",
                                     color: "#6A6A6A",
-
+                                    textAlign: 'justify'
                                 }}
                             >
                                 At Jayojay Constructions, we don’t just build structures—we create legacies. Backed by years of expertise and an unwavering commitment to excellence, we are a name synonymous with quality, trust, and innovation in the construction industry. From residential marvels to commercial landmarks, we specialize in delivering projects that combine world-class craftsmanship with modern design, tailored to your unique vision.
@@ -292,7 +325,7 @@ const AboutUs = () => {
                                     "Renovation",
                                     "Real Estate",
                                 ].map((text, index) => (
-                                    <Grid item xs={12} sm={6} key={index}>
+                                    <Grid item xs={6} sm={6} key={index}>
                                         <Box display="flex" alignItems="center">
                                             <CheckCircleOutlineIcon
                                                 color="primary"
@@ -367,7 +400,7 @@ const AboutUs = () => {
                 </Grid>
             </Box>
 
-            <Box sx={{ padding: { xs: "3rem", sm: "2rem", md: "5rem" } }}>
+            <Box sx={{ padding: { xs: "3rem", sm: "3rem", md: "4rem" } }}>
                 {/* Heading Section */}
                 <Box
                     sx={{
@@ -514,7 +547,7 @@ const AboutUs = () => {
                 <Typography variant="h4" align="left" gutterBottom>
                     Our CEO's
                 </Typography>
-                <Typography variant="body1" align="left" sx={{ marginBottom: "20px" }}>
+                <Typography variant="body1" align="left" sx={{ marginBottom: "20px", textAlign: 'justify' }}>
                     Lorem ipsum dolor sit amet consectetur. Diam dignissim ac lectus pulvinar nunc tortor tempus. Eget a sit ornare sed dignissim auctor. Nulla diam pellentesque viverra a a vel id. Urna in cursus pharetra in suscipit diam.
                 </Typography>
 
@@ -548,7 +581,12 @@ const AboutUs = () => {
                                     </Box>
                                     <hr />
                                     {/* Description */}
-                                    <Typography variant="body2">{ceo.description}</Typography>
+                                    <Typography sx={{
+                                        fontSize: 15,
+                                        fontFamily: "Roboto",
+                                        color: "#6A6A6A",
+                                    }}>
+                                        {ceo.description}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>

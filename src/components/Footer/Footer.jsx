@@ -20,7 +20,7 @@ const Footer = ({ scrollToSection, refs }) => {
                 <Grid item xs={12} sm={6} md={3}>
                     <Box>
                         <img src={Logo} alt="Company Logo" className="footer-logo" style={{ cursor: "pointer" }} onClick={() => navigate("/")} />
-                        <Typography className="footer-description">
+                        <Typography sx={{ fontFamily: 'Roboto' }} className="footer-description">
                             Jayojay Construction is a leading construction company based in Indore, committed to delivering high-quality residential, commercial, and infrastructure projects
                         </Typography>
                     </Box>

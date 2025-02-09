@@ -159,7 +159,6 @@ export const Contactus = () => {
 
     return (
         <>
-
             <ToastContainer />
             <Box
                 sx={{
@@ -319,14 +318,21 @@ export const Contactus = () => {
                                             value={formValues.email}
                                             onChange={(e) => {
                                                 const input = e.target.value;
+                                                handleChange(e); // Always update the state
+                                            }}
+                                            onBlur={(e) => {
+                                                const input = e.target.value;
                                                 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                                                if (input === "" || emailPattern.test(input)) {
-                                                    handleChange(e);
+                                                if (input && !emailPattern.test(input)) {
+                                                    setErrors((prev) => ({ ...prev, email: "Invalid email format" }));
+                                                } else {
+                                                    setErrors((prev) => ({ ...prev, email: "" }));
                                                 }
                                             }}
                                             error={!!errors.email}
                                             helperText={errors.email}
                                         />
+
                                     </Grid>
 
                                     {/* Work Inquiries */}
