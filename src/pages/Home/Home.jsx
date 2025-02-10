@@ -32,7 +32,7 @@ const Home = () => {
                 <SEO
                     title="Home - Jayojay Associates"
                     description="We specialise in   construction, project management and consultancy services"
-                    keywords="“construction company near me, consultation, building, architecture, interior, Turn key Construction,Real Estate"
+                    keywords="construction company near me, consultation, building, architecture, interior, Turn key Construction,Real Estate"
                     structuredData={structuredData}
                 />
                 <HomeImg />

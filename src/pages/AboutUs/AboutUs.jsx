@@ -450,11 +450,12 @@ const AboutUs = () => {
                             variant="h4"
                             mt={2}
                             sx={{
-                                fontSize: 17,
+                                fontSize: 16,
                                 fontFamily: "Roboto",
                                 fontWeight: 400,
                                 color: "#6A6A6A",
-                                textAlign: 'justify'
+                                textAlign: 'justify',
+                                lineHeight: '1.5rem'
                             }}
                         >
                             Jayojay provides expert construction and pre-construction services, precisely tailored to each client's individual needs. Our project consultation services offer strategic guidance from concept to completion. We execute turnkey construction solutions, manage projects flawlessly, and integrate vital services, including interior design, architecture, and real estate valuation.  We prioritize transparent communication, collaborative partnerships, and efficient workflows, enabling informed choices and delivering exceptional, cost-effective outcomes.

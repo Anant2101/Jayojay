@@ -11,11 +11,13 @@ const SEO = ({ title, description, keywords, structuredData }) => {
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={window.location.href} />
+            <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : ""} />
+
             {structuredData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                />
             )}
         </Helmet>
     );
