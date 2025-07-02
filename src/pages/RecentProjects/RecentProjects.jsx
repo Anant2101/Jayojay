@@ -1,6 +1,6 @@
 
 import { Box, Breadcrumbs, Button, Grid, Typography, Link, CardMedia, Card, CardContent } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import firstImg from "../../Assets/Projects/1.webp";
 import secondImg from "../../Assets/Projects/2.webp";
 import thirdImg from "../../Assets/Projects/3.webp";
@@ -9,6 +9,8 @@ import projectsHeroBg from '../../Assets/Projects/projectsHero.webp'
 import projects from "./projectsData.json";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../components/SEO/Seo";
+import ReactGA from "react-ga";
+
 
 // const data = [
 //     {
@@ -134,6 +136,9 @@ const RecentProjects = () => {
     const [selectedIds, setSelectedIds] = useState([]);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    })
 
     const handleShowMore = () => {
         setVisibleCount((prevCount) => prevCount + 3);

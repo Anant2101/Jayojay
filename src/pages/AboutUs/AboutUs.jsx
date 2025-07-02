@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
     Box,
     Grid,
@@ -16,7 +16,7 @@ import {
 import HomeIcon from '@mui/icons-material/Home';
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import SEO from "../../components/SEO/Seo";
-
+import ReactGA from "react-ga";
 
 
 // Assets
@@ -138,6 +138,10 @@ const CEOCard = ({ name, designation, description, image }) => (
 
 // Main Component
 const AboutUs = () => {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    })
 
     const structuredData = {
         "@context": "https://schema.org",

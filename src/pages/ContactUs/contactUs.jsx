@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import contactUsEmail from "../../Assets/ContactUs/ContactUsEmail.webp";
 import contactUsPhone from "../../Assets/ContactUs/ContactUsPhone.webp";
 import contactUsLocation from "../../Assets/ContactUs/ContactUslocation.webp";
@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomeIcon from '@mui/icons-material/Home';
 import ContactusHero from '../../Assets/ContactUs/contactusHero.webp'
+import ReactGA from "react-ga";
 
 
 const contactInfo = [
@@ -55,6 +56,11 @@ export const ContactUsPage = () => {
         setFormValues((prev) => ({ ...prev, [name]: value }));
         setErrors((prev) => ({ ...prev, [name]: "" }));
     };
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    })
+
 
     const handleSubmit = () => {
         const newErrors = {};

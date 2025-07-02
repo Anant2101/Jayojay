@@ -9,11 +9,15 @@ import { Testimonals } from './Home Sections/Testimonials'
 import { Contactus } from './Home Sections/ContactUs'
 import SEO from '../../components/SEO/Seo';
 import { useLocation } from 'react-router-dom';
+import ReactGA from "react-ga";
 
 const Home = () => {
     const location = useLocation();
 
     useEffect(() => {
+
+        ReactGA.pageview(window.location.pathname);
+
         if (location.hash) {
             // scroll after small delay to ensure section is mounted
             const id = location.hash.replace('#', '');
