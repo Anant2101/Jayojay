@@ -6,7 +6,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Fab, Box, CircularProgress } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { HelmetProvider } from "react-helmet-async";
-
+import ReactGA from "react-ga";
 // Lazy load the pages
 const Home = lazy(() => import("./pages/Home/Home"));
 const About = lazy(() => import("./pages/AboutUs/AboutUs"));
@@ -16,6 +16,10 @@ const ContactUS = lazy(() => import("./pages/ContactUs/contactUs"));
 const ProjectDetails = lazy(() =>
   import("./pages/RecentProjects/ProjectDetails")
 );
+
+const Tracking_ID = "G-F44968XLND";
+ReactGA.initialize(Tracking_ID);
+
 const App = () => {
   const [showScroll, setShowScroll] = useState(false);
 

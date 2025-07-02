@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ReactGA from "react-ga";
 
 import servicesBG from '../../Assets/Services/servicesBG.webp';
 import experienceIcon from '../../Assets/Services/Experienced team_.webp';
@@ -113,6 +114,7 @@ const Services = () => {
 
     // IntersectionObserver effect inside Services component
     useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
