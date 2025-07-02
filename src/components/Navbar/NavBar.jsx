@@ -3,10 +3,14 @@ import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, Lis
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from "../../Assets/Navbar/logo.webp";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const navigate = useNavigate();
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down(750)); // Check if screen width is below 750px
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -26,52 +30,65 @@ export const Navbar = () => {
         <>
             <AppBar position="sticky" sx={{ backgroundColor: '#002D62' }}>
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <img src={Logo} alt="JayoJay Logo" width="150px" height="100%" style={{ cursor: "pointer" }}
-                        onClick={() => navigate("/")} />
-                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1, justifyContent: 'center', flexDirection: 'row' }}>
+                    <img
+                        src={Logo}
+                        alt="JayoJay Logo"
+                        width="150px"
+                        height="100%"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => navigate("/")}
+                    />
+
+                    {/* Show menu items only if screen is larger than 750px */}
+                    <Box sx={{ display: isMobile ? 'none' : 'flex', flexGrow: 1, justifyContent: 'center', flexDirection: 'row' }}>
                         {menuItems.map(({ label, path }) => (
                             <Link key={label} to={path} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Typography sx={{
                                     mx: 3, fontFamily: 'Exo', fontWeight: 600, fontSize: '19px', transition: "transform 0.4s",
-
                                 }}>
                                     {label}
                                 </Typography>
                             </Link>
                         ))}
                     </Box>
-                    <IconButton
-                        edge="end"
-                        color="inherit"
-                        aria-label="menu"
-                        onClick={toggleDrawer(true)}
-                        sx={{ display: { xs: 'block', sm: 'none', marginRight: '10px' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Button
-                        sx={{
-                            display: { xs: 'none', sm: 'block' }, textAlign: 'center', fontFamily: 'Exo',
-                            fontWeight: 700, width: '150px', borderRadius: '5px',
-                            backgroundColor: 'white', color: '#002D62',
-                            transition: 'all 0.2s ease-in-out',
-                            '&:hover': {
-                                backgroundColor: '#E0E0E0',
-                                color: '#003B8D',
-                                transform: 'scale(1.01)',
-                                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
-                            },
-                        }}
-                        color="inherit"
-                        component={Link}
-                        to="/contact-us"
-                    >
-                        Contact Us
-                    </Button>
+
+                    {/* Show menu button only if screen width is below 750px */}
+                    {isMobile && (
+                        <IconButton
+                            edge="end"
+                            color="inherit"
+                            aria-label="menu"
+                            onClick={toggleDrawer(true)}
+                            sx={{ marginRight: '10px' }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    )}
+
+                    {!isMobile && (
+                        <Button
+                            sx={{
+                                textAlign: 'center', fontFamily: 'Exo', fontWeight: 700, width: '150px', borderRadius: '5px',
+                                backgroundColor: 'white', color: '#002D62',
+                                transition: 'all 0.2s ease-in-out',
+                                '&:hover': {
+                                    backgroundColor: '#E0E0E0',
+                                    color: '#003B8D',
+                                    transform: 'scale(1.01)',
+                                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
+                                },
+                            }}
+                            color="inherit"
+                            component={Link}
+                            to="/contact-us"
+                        >
+                            Contact Us
+                        </Button>
+                    )}
                 </Toolbar>
             </AppBar>
 
-
+            {/* Mobile Drawer */}
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
                 <Box
                     sx={{ width: 250 }}

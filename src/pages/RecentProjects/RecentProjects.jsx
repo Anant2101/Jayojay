@@ -182,7 +182,7 @@ const RecentProjects = () => {
             <SEO
                 title="Our Projects - Jayojay Associates"
                 description="Explore our projects"
-                keywords="construction company, building consultation,interior, project management,best construction company in Indore"
+                keywords="construction company, building consultation,interior, project management,best construction company in Indore,best construction company in Indore"
                 structuredData={structuredData}
             />
             <Box
@@ -283,6 +283,22 @@ const RecentProjects = () => {
                 </Box>
             </Box>
             <Box style={{ padding: '3rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                <Typography sx={{ fontFamily: "Exo", fontWeight: "bold", fontSize: "26px" }}>
+                    Our Work Speaks for Itself
+                </Typography>
+                <Typography
+                    sx={{
+                        fontFamily: "Roboto",
+                        fontWeight: 400,
+                        fontSize: "17px",
+                        // color: "#6A6A6A",
+                        marginTop: "1rem",
+                        textAlign: 'justify',
+                        marginBottom: '3rem'
+                    }}
+                >
+                    As the best construction company in Indore, Jayojay is proud to present a curated portfolio of completed projects, highlighting our commitment to quality, innovation, and design excellence.
+                </Typography>
                 <Grid container spacing={3}>
                     {projects.slice(0, visibleCount).map((project) => (
                         <Grid item xs={12} sm={6} md={4} key={project.id}>
@@ -294,7 +310,7 @@ const RecentProjects = () => {
                                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
                                     transition: "transform 0.3s",
                                     "&:hover": {
-                                        transform: "scale(1.05)",
+                                        transform: "scale(1.02)",
                                     },
                                     cursor: 'pointer'
                                 }}>
@@ -324,6 +340,8 @@ const RecentProjects = () => {
                         color="primary"
                         onClick={handleShowMore}
                         sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
                             marginTop: '30px',
                             backgroundColor: "#002D62",
                             color: "white",

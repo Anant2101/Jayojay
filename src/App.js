@@ -44,62 +44,65 @@ const App = () => {
   };
 
   return (
-    <HelmetProvider>
-      <Router>
-        <ScrollToTop />
-        <Navbar />
-        {/* Use Suspense to handle lazy-loaded components */}
-        <Suspense
-          fallback={
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <CircularProgress sx={{ color: "#002D62" }} />
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/our-services" element={<Services />} />
-            <Route path="/our-projects" element={<Products />} />
-            <Route path="/contact-us" element={<ContactUS />} />
-            <Route path="/details" element={<ProjectDetails />} />
-          </Routes>
-        </Suspense>
-        <Footer />
+    <>
+      <HelmetProvider>
+        <Router>
+          <ScrollToTop />
+          <Navbar />
+          {/* Use Suspense to handle lazy-loaded components */}
+          <Suspense
+            fallback={
+              <div
+                style={{
+                  minHeight: "100vh",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <CircularProgress sx={{ color: "#002D62" }} />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/our-services" element={<Services />} />
+              <Route path="/our-projects" element={<Products />} />
+              <Route path="/contact-us" element={<ContactUS />} />
+              <Route path="/details" element={<ProjectDetails />} />
+            </Routes>
+          </Suspense>
+          <Footer />
 
-        {/* Scroll to Top Button */}
-        <Box
-          sx={{
-            position: "fixed",
-            bottom: 16,
-            right: 16,
-            zIndex: 1000,
-          }}
-        >
-          {showScroll && (
-            <Fab
-              sx={{
-                backgroundColor: "#002D62",
-                color: "#fff",
-                "&:hover": {
-                  backgroundColor: "#004080",
-                },
-              }}
-              aria-label="scroll-to-top"
-              onClick={handleScrollToTop}
-            >
-              <ArrowUpwardIcon />
-            </Fab>
-          )}
-        </Box>
-      </Router>
-    </HelmetProvider>
+          {/* Scroll to Top Button */}
+          <Box
+            sx={{
+              position: "fixed",
+              bottom: 16,
+              right: 16,
+              zIndex: 1000,
+            }}
+          >
+            {showScroll && (
+              <Fab
+                sx={{
+                  backgroundColor: "#002D62",
+                  color: "#fff",
+                  "&:hover": {
+                    backgroundColor: "#004080",
+                  },
+                }}
+                aria-label="scroll-to-top"
+                onClick={handleScrollToTop}
+              >
+                <ArrowUpwardIcon />
+              </Fab>
+            )}
+          </Box>
+        </Router>
+      </HelmetProvider>
+    </>
   );
 };
 

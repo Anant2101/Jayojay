@@ -60,7 +60,8 @@ const ProjectDetails = () => {
                             sx={{
                                 fontFamily: "Exo",
                                 fontWeight: 700,
-                                fontSize: "50px",
+                                // fontSize: { xs: '40px', sm: '50px' },
+                                fontSize: '40px',
                                 marginBottom: "1rem",
                             }}
                         >
@@ -182,7 +183,7 @@ const ProjectDetails = () => {
                                                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
                                                 borderRadius: "8px",
                                                 height: "250px",
-                                                width: "250px",
+                                                width: "280px",
                                                 display: "flex",
                                                 alignItems: "center",
                                                 justifyContent: "center",

@@ -67,14 +67,20 @@ export const ContactUsPage = () => {
             }
         });
 
+        if (formValues.phoneNumber && !/^\d{10}$/.test(formValues.phoneNumber)) {
+            newErrors.phoneNumber = "Enter a valid Phone number";
+            hasError = true;
+        }
+
+
         if (hasError) {
             setErrors(newErrors);
             return;
         }
 
-        const serviceId = "service_jvdrkqf";
-        const templateId = "template_1tyns4t";
-        const publicKey = "HUq1j9bJ5wDASRHPl";
+        const serviceId = "service_5ncv73q";
+        const templateId = "template_pxl3652";
+        const publicKey = "Fd6iYUYge4ZE9fspD";
 
         const detailsParams = {
             from_name: formValues.name,
@@ -83,6 +89,15 @@ export const ContactUsPage = () => {
             from_regarding: formValues.workInquiries,
             message: formValues.projectDetails,
         };
+
+        const url = "https://script.google.com/macros/s/AKfycbxgpsVWkvhAxxTWRx7kcAi07BWYpKfTzNoE0_4DHZPbkF1udGROmtJ9Qn5JWueTMHFI/exec"
+        fetch(url, {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: (`Name=${formValues.name}&Phone=${formValues.phoneNumber}`),
+        }).then(res => res.text()).then(data => {
+            // alert(data)
+        }).catch(error => console.log(error))
 
         emailjs
             .send(serviceId, templateId, detailsParams, publicKey)
@@ -136,7 +151,7 @@ export const ContactUsPage = () => {
                         sx={{
                             fontFamily: "Exo",
                             fontWeight: 700,
-                            fontSize: "50px",
+                            fontSize: "40px",
                             marginBottom: "1rem",
                         }}
                     >
@@ -291,7 +306,7 @@ export const ContactUsPage = () => {
                                             color: "black",
                                         }}
                                     >
-                                        Have a Project in Mind? <br></br>Contact With Us
+                                        Ready to Build Something ?
                                     </Typography>
                                     <Typography
                                         variant="h4"
@@ -303,7 +318,8 @@ export const ContactUsPage = () => {
                                             marginTop: "1rem",
                                         }}
                                     >
-                                        For more information or to speak with our team, please contact us today. We are here to help with all your construction needs and look forward to working with you.
+                                        Looking for a reliable construction company near you? Let’s connect and make your vision a reality.
+                                        📞 Call us | 📧 Email us | 📍 Visit our Indore office
                                     </Typography>
                                 </Box>
                             </Box>

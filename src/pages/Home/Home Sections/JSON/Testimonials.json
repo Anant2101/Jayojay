@@ -1,23 +1,51 @@
 [
-    {
-        "title": "Best Company",
-        "rating": 5,
-        "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
-        "name": "Kourtney Holland",
-        "role": "UX/UI Designer"
-    },
-    {
-        "title": "Good Service",
-        "rating": 5,
-        "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
-        "name": "Jacklin Martinez",
-        "role": "UX/UI Designer"
-    },
-    {
-        "title": "Best Construction",
-        "rating": 5,
-        "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
-        "name": "Renee Wells",
-        "role": "UX/UI Designer"
-    }
+  {
+    "title": "Best Company",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Kourtney Holland",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Good Service",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Jacklin Martinez",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Good Service",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Jacklin Martinez",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Good Service",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Jacklin Martinez",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Good Service",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Jacklin Martinez",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Good Service",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Jacklin Martinez",
+    "role": "UX/UI Designer"
+  },
+  {
+    "title": "Best Construction",
+    "rating": 5,
+    "description": "We are an architecture firm with a focus on beautiful but functional design. At its heart, we believe in design is about usability and accessibility; these are the guiding principles for our work.",
+    "name": "Renee Wells",
+    "role": "UX/UI Designer"
+  }
 ]

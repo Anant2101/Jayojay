@@ -16,6 +16,8 @@ import thirdIcon from "../../../Assets/Home/serviceCard/3.webp";
 import fourthIcon from "../../../Assets/Home/serviceCard/4.webp";
 import fifthIcon from "../../../Assets/Home/serviceCard/5.webp";
 import whatWeDo from './JSON/whatWeDo.json'
+import Slider from "react-slick";
+
 
 const services = [
     {
@@ -62,20 +64,20 @@ const services = [
     },
 ];
 
-const servicesForMobile = [
-    {
-        title: "Project Consultant",
-        description:
-            "There are many variations of passages of Lorem Ipsum available.",
-        icon: firstIcon,
-    },
-    {
-        title: "Real Estate",
-        description:
-            "There are many variations of passages of Lorem Ipsum available.",
-        icon: secondIcon,
-    },
-];
+// const servicesForMobile = [
+//     {
+//         title: "Project Consultant",
+//         description:
+//             "There are many variations of passages of Lorem Ipsum available.",
+//         icon: firstIcon,
+//     },
+//     {
+//         title: "Real Estate",
+//         description:
+//             "There are many variations of passages of Lorem Ipsum available.",
+//         icon: secondIcon,
+//     },
+// ];
 
 const WhatWeDo = () => {
     const theme = useTheme();
@@ -104,8 +106,16 @@ const WhatWeDo = () => {
         };
     }, []);
 
+    const sliderSettings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+    };
 
-    const displayedServices = isMobile ? servicesForMobile : services;
+    // const displayedServices = isMobile ? servicesForMobile : services;
 
     return (
         <Box
@@ -187,11 +197,15 @@ const WhatWeDo = () => {
                     <Typography
                         variant="h4"
                         sx={{
+
                             marginBottom: "20px",
                             fontWeight: 400,
                             fontFamily: "Roboto",
                             fontSize: "18px",
                             color: "#6A6A6A",
+                            lineHeight: "1.5rem",
+                            textAlign: 'justify',
+                            hyphens: 'auto'
                         }}
                     >
                         {whatWeDo.description}
@@ -199,14 +213,13 @@ const WhatWeDo = () => {
                 </Box>
             </Box>
             <Grow in={isVisible} timeout={1000}>
-
                 <Grid
                     container
                     spacing={4}
                     justifyContent="left"
                     sx={{ padding: "1.5rem 3rem 3rem 3rem", display: "flex", flexWrap: "wrap" }}
                 >
-                    {displayedServices.map((service, index) => (
+                    {services.map((service, index) => (
                         <Grid item key={index} xs={12} sm={6} md={3}>
                             <Card
                                 variant="outlined"

@@ -139,11 +139,8 @@ export const Contactus = () => {
             return;
         }
 
-        // const serviceId = "service_jvdrkqf";
         const serviceId = "service_5ncv73q";
-        // const templateId = "template_1tyns4t";
         const templateId = "template_pxl3652";
-        // const publicKey = "HUq1j9bJ5wDASRHPl";
         const publicKey = "Fd6iYUYge4ZE9fspD";
 
         const detailsParams = {

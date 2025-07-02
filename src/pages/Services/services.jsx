@@ -17,6 +17,9 @@ import sitePlanningImg from '../../Assets/Services/Site planning.webp';
 import mgmtImg from '../../Assets/Services/Construction management_.webp';
 import materialImg from '../../Assets/Services/Material sourcing_.webp';
 import logo from '../../Assets/Footer/logo.webp'
+import { Slide } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
+
 
 import firstImg from "../../Assets/Services/Frame 24.webp";
 import secondImg from "../../Assets/Services/Frame 25.webp";
@@ -54,28 +57,28 @@ const servicesData = [
 const features = [
     {
         icon: experienceIcon,
-        title: "Experienced Team",
-        description: "Our team includes skilled professionals in construction and project management who are committed to delivering top-quality work.",
+        title: "Experienced Professionals",
+        description: "Skilled experts in construction, management, and design",
     },
     {
         icon: onTimeIcon,
-        title: "On-Time Completion",
-        description: "We work hard to meet deadlines so your project stays on schedule.",
+        title: "All-in-One Solutions",
+        description: "From planning to interior finish",
     },
     {
         icon: solutionIcon,
-        title: "Complete Solutions",
-        description: "We handle everything from planning and design to construction, covering all project stages under one roof.",
+        title: "Affordable Quality",
+        description: "Premium work that fits your budget",
     },
     {
         icon: customerIcon,
-        title: "Customer-Centered Service",
-        description: "We prioritize your needs and provide personalized service, making your satisfaction our main goal.",
+        title: "On-Time Delivery",
+        description: "We respect your timeline",
     },
     {
         icon: affordableIcon,
-        title: "Affordable Quality",
-        description: "We balance high-quality construction with cost-effective solutions to meet your budget.",
+        title: "Client-First Philosophy",
+        description: "Your satisfaction is our mission",
     },
 ];
 
@@ -101,7 +104,32 @@ const sliderSettings = {
     ],
 };
 
+
+
 const Services = () => {
+    // State and ref setup at the top inside Services component
+    const [featuresVisible, setFeaturesVisible] = useState(false);
+    const featuresRef = useRef(null);
+
+    // IntersectionObserver effect inside Services component
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setFeaturesVisible(true);
+                    observer.disconnect(); // only animate once
+                }
+            },
+            { threshold: 0.2 }
+        );
+
+        if (featuresRef.current) {
+            observer.observe(featuresRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
 
     const structuredData = {
         "@context": "https://schema.org",
@@ -138,7 +166,7 @@ const Services = () => {
             <SEO
                 title="Services - Jayojay Associates"
                 description="Affordable and Comprehensive Construction and Pre-Construction Services in India   "
-                keywords="construction company, building consultation, project management, “Affordable and Comprehensive Construction and Pre-Construction Services in India"
+                keywords="Affordable and Comprehensive Construction and Pre-Construction Services in India"
                 structuredData={structuredData}
             />
             {/* Hero Section */}
@@ -167,7 +195,7 @@ const Services = () => {
                     }}
                 ></Box>
                 <Box sx={{ position: "relative", zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ fontFamily: "Exo", fontWeight: 700, fontSize: "50px", marginBottom: "1rem" }}>Services</Typography>
+                    <Typography sx={{ fontFamily: "Exo", fontWeight: 700, fontSize: "40px", marginBottom: "1rem" }}>Services</Typography>
                     <Breadcrumbs
                         separator="/"
                         aria-label="breadcrumb"
@@ -214,7 +242,7 @@ const Services = () => {
                     Project Consultant
                 </Typography>
                 <Box sx={{ display: "flex", flexDirection: "column", marginTop: { xs: '1rem', sm: "2rem" } }}>
-                    <Typography sx={{ fontFamily: "Exo", fontWeight: "bold", fontSize: "26px" }}>
+                    <Typography sx={{ fontFamily: "Exo", fontWeight: "bold", fontSize: "26px", hyphens: 'auto' }}>
                         Affordable and Comprehensive Construction and Pre-Construction Services in India
                     </Typography>
                     <Typography
@@ -227,7 +255,7 @@ const Services = () => {
                             textAlign: 'justify'
                         }}
                     >
-                        At Jayojay, we are focused on providing complete construction and pre-construction services that fit each client's specific needs. With our project consultation services, we guide you through every stage, from your first ideas to the end of the project, making sure you get the best results.
+                        At Jayojay, we offer full-service construction and pre-construction solutions, backed by data-driven planning and expert project guidance. Our team ensures your project flows seamlessly from concept to completion, always prioritizing efficiency and affordability.
                     </Typography>
                 </Box>
             </Box>
@@ -324,7 +352,7 @@ const Services = () => {
             </Box >
 
             {/* Features Section */}
-            < Box sx={{ flexGrow: 1, padding: { xs: '2rem', sm: '3rem' } }}>
+            {/* < Box sx={{ flexGrow: 1, padding: { xs: '2rem', sm: '3rem' } }}>
                 <Grid container spacing={3} justifyContent="flex-start">
                     {features.map(({ icon, title, description }, index) => (
                         <Grid key={index} item xs={12} sm={12} md={6} lg={4} sx={{ textAlign: "left", padding: "2px" }}>
@@ -348,23 +376,63 @@ const Services = () => {
                         </Grid>
                     ))}
                 </Grid>
-            </Box >
+            </Box > */}
+
+            <Box
+                ref={featuresRef}
+                sx={{ flexGrow: 1, padding: { xs: '2rem', sm: '3rem' } }}
+            >
+                <Slide direction="right" in={featuresVisible} timeout={700}>
+                    <div>
+                        <Grid container spacing={3} sx={{ justifyContent: { xs: 'center', sm: 'flex-start' } }}>
+                            {features.map(({ icon, title, description }, index) => (
+                                <Grid key={index} item xs={12} sm={12} md={6} lg={4} sx={{ textAlign: { xs: 'center', sm: 'left' }, padding: "2px" }}>
+                                    <Box display="flex" alignItems="flex-start" padding={2} sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
+                                        <Box display="flex" justifyContent="center" alignItems="center" marginRight={2} borderRadius={4}>
+                                            <img src={icon} alt={title} />
+                                        </Box>
+                                        <Box>
+                                            <Typography sx={{ fontFamily: "Exo", fontWeight: 800, fontSize: "25px", marginTop: { xs: '1rem', sm: '0px' } }}>
+                                                {title}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    fontFamily: "Roboto",
+                                                    fontWeight: 400,
+                                                    fontSize: "15px",
+                                                    color: "#3D3D3D",
+                                                    wordSpacing: '0px'
+                                                }}
+                                            >
+                                                {description}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </div>
+                </Slide>
+            </Box>
+
 
             {/* Optimized Code Section */}
             < Box sx={{ padding: { xs: '0rem 1rem 1rem 1rem', sm: '3rem' }, backgroundColor: "#e6f0ff" }}>
                 <Grid container>
                     <Grid item xs={12} md={6}>
                         <Box sx={{ padding: "2rem", borderRadius: "8px" }}>
-                            <img src={ServicesDescriptionImg} alt="Left Content Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src={ServicesDescriptionImg} alt="Left Content Image" style={{ width: "100%", height: "80%", borderRadius: "8px" }} />
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} display="flex">
                         <Box sx={{ padding: { xs: "0rem 2rem 2rem 2rem", sm: "2rem", md: "1rem", lg: "3rem" }, flexDirection: "column" }}>
                             <Typography sx={{ fontFamily: "Exo", fontWeight: 700, fontSize: "40px" }} gutterBottom>
-                                Data-Driven Decisions for Better Project Outcomes
+                                {/* Data-Driven Decisions for Better Project Outcomes */}
+                                The Jayojay Difference
                             </Typography>
                             <Typography sx={{ fontFamily: "Roboto", fontWeight: 400, fontSize: "17px", color: "#6A6A6A" }}>
-                                At Jayojay, we prioritize making construction decisions that are both affordable and aligned with your goals. Our commitment includes research and careful planning. Using data-driven insights, we help clients choose paths that align with market trends while respecting budget limits.
+                                {/* At Jayojay, we prioritize making construction decisions that are both affordable and aligned with your goals. Our commitment includes research and careful planning. Using data-driven insights, we help clients choose paths that align with market trends while respecting budget limits. */}
+                                At Jayojay Constructions, we don't just build structures—we build legacies. With years of experience and a passion for excellence, we deliver affordable construction services without compromising on quality or design. From residential marvels to commercial landmarks, every project is a reflection of trust, craftsmanship, and innovation.
                             </Typography>
                         </Box>
                     </Grid>

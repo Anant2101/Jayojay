@@ -129,7 +129,7 @@ export const WorkingProgress = () => {
                                 marginBottom: '2rem'
                             }}
                         >
-                            Efficient, Client-Centered Construction Process
+                            Streamlined. Client-Focused. Transparent.
                         </Typography>
 
                         <Box sx={{ color: "#fff", maxWidth: 600 }}>

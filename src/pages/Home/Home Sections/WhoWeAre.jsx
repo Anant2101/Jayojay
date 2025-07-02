@@ -98,7 +98,8 @@ export const WhoWeAre = () => {
                                 fontSize: "17px",
                                 fontWeight: 400,
                                 color: "#6A6A6A",
-                                textAlign: 'justify'
+                                textAlign: 'justify',
+                                hyphens: 'auto'
                             }}
                         >
                             {whoWeAreData.description}

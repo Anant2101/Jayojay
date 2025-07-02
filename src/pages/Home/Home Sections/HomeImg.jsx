@@ -45,8 +45,10 @@ export const HomeImg = () => {
                             fontFamily: "Exo",
                         }}
                     >
-                        Creating spaces with care, driven by expertise and a commitment to
-                        delivering excellence.
+                        {/* Creating spaces with care, driven by expertise and a commitment to
+                        delivering excellence. */}
+                        Strengthening Roofs, Building Dreams Across India
+                        {/* We specialize in construction, project management, and consultancy services that blend quality with reliability. */}
                     </Typography>
                 </Box>
             </Box>
