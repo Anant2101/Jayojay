@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 
 const SEO = ({ title, description, keywords, structuredData }) => {
+    console.log("Structured Data Injected:", structuredData);
+
     return (
         <Helmet>
             <title>{title}</title>
