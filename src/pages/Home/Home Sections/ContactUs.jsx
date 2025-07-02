@@ -24,13 +24,14 @@ const InfoCard = ({ icon: Icon, title, content }) => (
         sx={{
             marginBottom: 2,
             boxShadow: "none",
+            // padding: { xs: '10px 0px 10px 10px', sm: 2 },
             padding: 2,
             display: "flex",
             flexWrap: 'wrap',
             alignItems: "center",
             border: "1px solid #e0e0e0",
             borderRadius: 2,
-            width: '100%'
+            width: { xs: '90%', sm: '100%' }
         }}
     >
         <Box
@@ -128,14 +129,22 @@ export const Contactus = () => {
             }
         });
 
+        if (formValues.phoneNumber && !/^\d{10}$/.test(formValues.phoneNumber)) {
+            newErrors.phoneNumber = "Enter a valid Phone number";
+            hasError = true;
+        }
+
         if (hasError) {
             setErrors(newErrors);
             return;
         }
 
-        const serviceId = "service_jvdrkqf";
-        const templateId = "template_1tyns4t";
-        const publicKey = "HUq1j9bJ5wDASRHPl";
+        // const serviceId = "service_jvdrkqf";
+        const serviceId = "service_5ncv73q";
+        // const templateId = "template_1tyns4t";
+        const templateId = "template_pxl3652";
+        // const publicKey = "HUq1j9bJ5wDASRHPl";
+        const publicKey = "Fd6iYUYge4ZE9fspD";
 
         const detailsParams = {
             from_name: formValues.name,
@@ -144,6 +153,15 @@ export const Contactus = () => {
             from_regarding: formValues.workInquiries,
             message: formValues.projectDetails,
         };
+
+        const url = "https://script.google.com/macros/s/AKfycbxgpsVWkvhAxxTWRx7kcAi07BWYpKfTzNoE0_4DHZPbkF1udGROmtJ9Qn5JWueTMHFI/exec"
+        fetch(url, {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: (`Name=${formValues.name}&Phone=${formValues.phoneNumber}`),
+        }).then(res => res.text()).then(data => {
+            // alert(data)
+        }).catch(error => console.log(error))
 
         emailjs
             .send(serviceId, templateId, detailsParams, publicKey)
@@ -252,7 +270,7 @@ export const Contactus = () => {
                                 gutterBottom
                                 sx={{ fontFamily: "Exo", fontSize: "28px", fontWeight: 700 }}
                             >
-                                Have a Project in Mind? <br /> Contact Us.
+                                Ready to Build Something Great?
                             </Typography>
                             <Typography
                                 variant="body1"
