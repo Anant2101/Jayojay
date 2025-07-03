@@ -211,7 +211,7 @@ const AboutUs = () => {
 
             {/* Stats Section */}
             <Box sx={{ backgroundColor: "#002855", color: "#fff", padding: "1rem 2rem" }}>
-                <Grid container alignItems="center" justifyContent={{ xs: "space-around", sm: "center" }} gap={"20px"}>
+                <Grid container alignItems="center" justifyContent={{ xs: "space-around", sm: "center" }} gap={"10px"}>
                     {stats.map((stat, index) => (
                         <React.Fragment key={index}>
                             <StatCard number={stat.number} label={stat.label} />
