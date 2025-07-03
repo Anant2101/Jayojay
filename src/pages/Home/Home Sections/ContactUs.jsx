@@ -134,6 +134,12 @@ export const Contactus = () => {
             hasError = true;
         }
 
+        if (formValues.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+            newErrors.email = "Enter a valid Email address";
+            hasError = true;
+        }
+
+
         if (hasError) {
             setErrors(newErrors);
             return;
@@ -151,7 +157,7 @@ export const Contactus = () => {
             message: formValues.projectDetails,
         };
 
-        const url = "https://script.google.com/macros/s/AKfycbxgpsVWkvhAxxTWRx7kcAi07BWYpKfTzNoE0_4DHZPbkF1udGROmtJ9Qn5JWueTMHFI/exec"
+        const url = "https://script.google.com/macros/s/AKfycbyZ_ZXymcmRcGDP8DPsIDbcbjEwGUj-wfU7WAUjTxHapq6uCMgyvEo7MNm7nQ5Zmo0/exec"
         fetch(url, {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
