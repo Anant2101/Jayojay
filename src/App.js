@@ -7,7 +7,7 @@ import { Fab, Box, CircularProgress } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { HelmetProvider } from "react-helmet-async";
 import ReactGA from "react-ga";
-// Lazy load the pages
+
 const Home = lazy(() => import("./pages/Home/Home"));
 const About = lazy(() => import("./pages/AboutUs/AboutUs"));
 const Services = lazy(() => import("./pages/Services/services"));
@@ -23,7 +23,6 @@ ReactGA.initialize(Tracking_ID);
 const App = () => {
   const [showScroll, setShowScroll] = useState(false);
 
-  // Show the scroll-to-top button when the user scrolls down
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -39,7 +38,6 @@ const App = () => {
     };
   }, []);
 
-  // Scroll to top function
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -53,7 +51,6 @@ const App = () => {
         <Router>
           <ScrollToTop />
           <Navbar />
-          {/* Use Suspense to handle lazy-loaded components */}
           <Suspense
             fallback={
               <div
@@ -79,7 +76,6 @@ const App = () => {
           </Suspense>
           <Footer />
 
-          {/* Scroll to Top Button */}
           <Box
             sx={{
               position: "fixed",

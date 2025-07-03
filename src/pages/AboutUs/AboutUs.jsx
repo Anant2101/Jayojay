@@ -9,7 +9,6 @@ import {
     CardContent,
     Breadcrumbs,
     Link,
-    Avatar,
     Divider,
     CardMedia,
 } from "@mui/material";
@@ -136,7 +135,6 @@ const CEOCard = ({ name, designation, description, image }) => (
 
 );
 
-// Main Component
 const AboutUs = () => {
 
     useEffect(() => {
@@ -173,7 +171,6 @@ const AboutUs = () => {
                 structuredData={structuredData}
             />
 
-            {/* Hero Section */}
             <Box sx={{ position: "relative", height: 300, backgroundImage: `url(${aboutHeroBg})`, backgroundSize: "cover", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", color: "white", textAlign: "center" }}>
                 <Box sx={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "rgba(0, 0, 0, 0.3)" }} />
                 <Box sx={{ position: "relative", zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

@@ -178,8 +178,8 @@ export const ContactUsPage = () => {
                             color: "white",
                             backgroundColor: '#002D62',
                             height: '50px',
-                            width: 'auto', // Adjust width to content
-                            padding: '0 16px', // Add some padding
+                            width: 'auto',
+                            padding: '0 16px',
                             borderRadius: '5px',
                         }}
                     >
@@ -190,7 +190,7 @@ export const ContactUsPage = () => {
                                 alignItems: "center",
                                 color: "white",
                                 textDecoration: "none !important",
-                                '&:hover': { // Optional: prevent underline on hover as well
+                                '&:hover': {
                                     textDecoration: 'none',
                                 },
                             }}
@@ -240,21 +240,20 @@ export const ContactUsPage = () => {
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
-                                height: "100%", // Full viewport height
-                                // White background with some transparency
+                                height: "100%",
                             }}
                         >
                             <Box
                                 sx={{
-                                    position: "relative", // Set position relative for the inner box
+                                    position: "relative",
                                     padding: { xs: "1.5rem", sm: "3rem" },
 
-                                    borderRadius: "8px", // Optional: rounded corners
+                                    borderRadius: "8px",
                                     display: "flex",
                                     justifyContent: "flex-start",
                                     alignItems: "center",
-                                    textAlign: "", // Center the text
-                                    overflow: "hidden", // Prevent overflow
+                                    textAlign: "",
+                                    overflow: "hidden",
                                 }}
                             >
                                 <style>
@@ -270,12 +269,12 @@ export const ContactUsPage = () => {
                                     className="contact-image"
                                     alt="Vector"
                                     style={{
-                                        width: "100%", // Adjust width as needed
-                                        height: "auto", // Maintain aspect ratio
-                                        maxWidth: "400px", // Optional: limit the max width
-                                        position: "absolute", // Position the image absolutely
+                                        width: "100%",
+                                        height: "auto",
+                                        maxWidth: "400px",
+                                        position: "absolute",
 
-                                        zIndex: 1, // Ensure the image is behind the text
+                                        zIndex: 1,
                                         maxHeight: "300px",
                                     }}
                                 />
@@ -441,6 +440,7 @@ export const ContactUsPage = () => {
 
             <Box sx={{ height: "400px", padding: "2rem" }}>
                 <iframe
+                    title="Map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.9176750978627!2d75.82570117455377!3d22.694108379405453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fc35baca5d35%3A0xb34346cd9c1bbcb!2sPhooti%20Kothi%20Cir%2C%20Indore%2C%20Madhya%20Pradesh%20452009!5e0!3m2!1sen!2sin!4v1736854922457!5m2!1sen!2sin"
                     width="100%"
                     height="100%"

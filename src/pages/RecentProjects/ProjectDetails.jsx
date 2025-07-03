@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Box, Grid, Card, CardContent, CardMedia, Typography, Breadcrumbs } from "@mui/material";
+import { Box, Grid, Card, CardMedia, Typography, Breadcrumbs } from "@mui/material";
 import projects from "./projectsData.json";
 import projectsHeroBg from '../../Assets/Projects/projectsHero.webp'
 
@@ -60,7 +60,6 @@ const ProjectDetails = () => {
                             sx={{
                                 fontFamily: "Exo",
                                 fontWeight: 700,
-                                // fontSize: { xs: '40px', sm: '50px' },
                                 fontSize: '40px',
                                 marginBottom: "1rem",
                             }}

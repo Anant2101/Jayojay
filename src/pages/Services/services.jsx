@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Breadcrumbs, Card, CardContent, CardMedia, Grid, Grid2, Link, Typography } from '@mui/material';
+import { Box, Breadcrumbs, Card, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -108,18 +108,16 @@ const sliderSettings = {
 
 
 const Services = () => {
-    // State and ref setup at the top inside Services component
     const [featuresVisible, setFeaturesVisible] = useState(false);
     const featuresRef = useRef(null);
 
-    // IntersectionObserver effect inside Services component
     useEffect(() => {
         ReactGA.pageview(window.location.pathname);
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setFeaturesVisible(true);
-                    observer.disconnect(); // only animate once
+                    observer.disconnect();
                 }
             },
             { threshold: 0.2 }
@@ -288,7 +286,7 @@ const Services = () => {
                     >
                         <img
                             src={firstImg}
-                            alt="Left"
+                            alt="First display"
                             style={{
                                 height: "100%",
                                 width: "100%",
@@ -306,7 +304,7 @@ const Services = () => {
                                 <Box sx={{ height: "300px" }}>
                                     <img
                                         src={img}
-                                        alt={`Image ${index + 2}`}
+                                        alt={`center ${index + 2}`}
                                         style={{
                                             height: "100%",
                                             width: "90%",
@@ -354,32 +352,6 @@ const Services = () => {
             </Box >
 
             {/* Features Section */}
-            {/* < Box sx={{ flexGrow: 1, padding: { xs: '2rem', sm: '3rem' } }}>
-                <Grid container spacing={3} justifyContent="flex-start">
-                    {features.map(({ icon, title, description }, index) => (
-                        <Grid key={index} item xs={12} sm={12} md={6} lg={4} sx={{ textAlign: "left", padding: "2px" }}>
-                            <Box display="flex" alignItems="flex-start" padding={2} sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
-                                <Box display="flex" justifyContent="center" alignItems="center" marginRight={2} borderRadius={4}>
-                                    <img src={icon} alt={title} />
-                                </Box>
-                                <Box>
-                                    <Typography sx={{ fontFamily: "Exo", fontWeight: 800, fontSize: "25px", marginTop: { xs: '1rem', sm: '0px' } }}>{title}</Typography>
-                                    <Typography
-                                        sx={{
-                                            fontFamily: "Roboto",
-                                            fontWeight: 400, fontSize: "15px",
-                                            color: "#3D3D3D",
-                                            wordSpacing: '0px'
-                                        }}
-                                    >
-                                        {description}</Typography>
-                                </Box>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box > */}
-
             <Box
                 ref={featuresRef}
                 sx={{ flexGrow: 1, padding: { xs: '2rem', sm: '3rem' } }}
@@ -423,7 +395,7 @@ const Services = () => {
                 <Grid container>
                     <Grid item xs={12} md={6}>
                         <Box sx={{ padding: "2rem", borderRadius: "8px" }}>
-                            <img src={ServicesDescriptionImg} alt="Left Content Image" style={{ width: "100%", height: "80%", borderRadius: "8px" }} />
+                            <img src={ServicesDescriptionImg} alt="Left Content " style={{ width: "100%", height: "80%", borderRadius: "8px" }} />
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} display="flex">

@@ -10,7 +10,7 @@ const ClientLogos = () => {
     const isAbove600px = useMediaQuery("(min-width:600px)");
 
     if (!isAbove600px) {
-        return null; // Don't show the section below 600px
+        return null;
     }
 
     return (
@@ -20,7 +20,7 @@ const ClientLogos = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "#ffffff", // Change to your preferred background color
+                backgroundColor: "#ffffff", 
                 paddingX: "2rem",
             }}
         >
@@ -43,8 +43,8 @@ const ClientLogos = () => {
                             alignItems: "center",
                             height: "100%",
 
-                            maxHeight: "150px", // Ensures the images scale properly
-                            flex: 1, // Makes the logos equally spaced
+                            maxHeight: "150px",
+                            flex: 1, 
                             marginX: "1rem",
                         }}
                     >

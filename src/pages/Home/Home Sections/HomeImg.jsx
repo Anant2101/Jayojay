@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material"; // Import MUI components
+import { Box, Typography } from "@mui/material";
 import homeImg from '../../../Assets/Home/homeBanner.webp';
 
 export const HomeImg = () => {
@@ -48,7 +48,6 @@ export const HomeImg = () => {
                         {/* Creating spaces with care, driven by expertise and a commitment to
                         delivering excellence. */}
                         Strengthening Roofs, Building Dreams Across India
-                        {/* We specialize in construction, project management, and consultancy services that blend quality with reliability. */}
                     </Typography>
                 </Box>
             </Box>

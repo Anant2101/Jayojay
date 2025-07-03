@@ -1,9 +1,8 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { HomeImg } from './Home Sections/HomeImg'
 import { WhoWeAre } from './Home Sections/WhoWeAre'
 import WhatWeDo from './Home Sections/WhatWoDo'
 import { HomeProjects } from './Home Sections/HomeProjects'
-import ClientLogos from './Home Sections/ClientLogos'
 import { WorkingProgress } from './Home Sections/WorkingProgress'
 import { Testimonals } from './Home Sections/Testimonials'
 import { Contactus } from './Home Sections/ContactUs'
@@ -19,16 +18,14 @@ const Home = () => {
         ReactGA.pageview(window.location.pathname);
 
         if (location.hash) {
-            // scroll after small delay to ensure section is mounted
             const id = location.hash.replace('#', '');
-            const scrollToSection = () => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                }
-            };
+            // const scrollToSection = () => {
+            //     const el = document.getElementById(id);
+            //     if (el) {
+            //         el.scrollIntoView({ behavior: 'smooth' });
+            //     }
+            // };
 
-            // retry scrolling if the element is not there yet
             const interval = setInterval(() => {
                 const el = document.getElementById(id);
                 if (el) {
@@ -37,7 +34,6 @@ const Home = () => {
                 }
             }, 100);
 
-            // stop retrying after 2 seconds
             setTimeout(() => {
                 clearInterval(interval);
             }, 2000);
@@ -80,7 +76,6 @@ const Home = () => {
                         <WhatWeDo />
                     </div>
                     <HomeProjects />
-                    {/* <ClientLogos /> */}
                     <WorkingProgress />
                     <div id="testimonials">
                         <Testimonals />

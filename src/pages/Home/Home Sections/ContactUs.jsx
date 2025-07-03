@@ -2,9 +2,7 @@ import {
     Card,
     Box,
     Button,
-    CardContent,
     Grid,
-    Paper,
     TextField,
     Typography,
     styled,
@@ -338,8 +336,8 @@ export const Contactus = () => {
                                             name="email"
                                             value={formValues.email}
                                             onChange={(e) => {
-                                                const input = e.target.value;
-                                                handleChange(e); // Always update the state
+                                                
+                                                handleChange(e); 
                                             }}
                                             onBlur={(e) => {
                                                 const input = e.target.value;

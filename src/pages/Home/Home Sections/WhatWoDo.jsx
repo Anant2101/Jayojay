@@ -5,9 +5,6 @@ import {
     Typography,
     Box,
     Grid,
-    Button,
-    useMediaQuery,
-    useTheme,
     Grow,
 } from "@mui/material";
 import firstIcon from "../../../Assets/Home/serviceCard/1.webp";
@@ -16,8 +13,6 @@ import thirdIcon from "../../../Assets/Home/serviceCard/3.webp";
 import fourthIcon from "../../../Assets/Home/serviceCard/4.webp";
 import fifthIcon from "../../../Assets/Home/serviceCard/5.webp";
 import whatWeDo from './JSON/whatWeDo.json'
-import Slider from "react-slick";
-
 
 const services = [
     {
@@ -64,24 +59,10 @@ const services = [
     },
 ];
 
-// const servicesForMobile = [
-//     {
-//         title: "Project Consultant",
-//         description:
-//             "There are many variations of passages of Lorem Ipsum available.",
-//         icon: firstIcon,
-//     },
-//     {
-//         title: "Real Estate",
-//         description:
-//             "There are many variations of passages of Lorem Ipsum available.",
-//         icon: secondIcon,
-//     },
-// ];
+
 
 const WhatWeDo = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
@@ -92,7 +73,7 @@ const WhatWeDo = () => {
                     setIsVisible(true);
                 }
             },
-            { threshold: 0.2 } // Trigger when 30% of the component is visible
+            { threshold: 0.2 }
         );
 
         if (sectionRef.current) {
@@ -106,16 +87,6 @@ const WhatWeDo = () => {
         };
     }, []);
 
-    const sliderSettings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-    };
-
-    // const displayedServices = isMobile ? servicesForMobile : services;
 
     return (
         <Box
@@ -125,8 +96,6 @@ const WhatWeDo = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-
-                // marginTop: "3rem",
                 width: "100%",
             }}
         >
@@ -286,24 +255,7 @@ const WhatWeDo = () => {
                     ))}
                 </Grid>
             </Grow>
-            {/* <Button
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                sx={{
-                    color: "white",
-                    height: "50px",
-                    width: "242px",
-                    backgroundColor: "#002D62",
-                    marginBottom: "3rem",
-                    fontFamily: "Roboto",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    borderRadius: "8px",
-                }}
-            >
-                Discover More
-            </Button> */}
+
         </Box>
     );
 };

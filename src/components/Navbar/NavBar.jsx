@@ -10,7 +10,7 @@ export const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const navigate = useNavigate();
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down(750)); // Check if screen width is below 750px
+    const isMobile = useMediaQuery(theme.breakpoints.down(750)); 
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

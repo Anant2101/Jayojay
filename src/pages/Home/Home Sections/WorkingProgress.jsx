@@ -1,10 +1,8 @@
 import React from "react";
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import workingBgImg from "../../../Assets/Home/WrokingProgress/Frame 14.webp";
 import bgRight from "../../../Assets/Home/WrokingProgress/shape_2.webp";
 import steps from './JSON/workingProgress.json'
-
-
 
 const StepItem = ({ step, isLast }) => (
     <Grid container spacing={2} alignItems="flex-start">
@@ -66,8 +64,6 @@ const StepItem = ({ step, isLast }) => (
 );
 
 export const WorkingProgress = () => {
-    const theme = useTheme();
-
     return (
         <Box
             sx={{

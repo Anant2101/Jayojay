@@ -75,10 +75,10 @@ const ProjectCard = ({ image, overlayText, showOverlay = false }) => (
 
 export const HomeProjects = () => {
     const isAbove600px = useMediaQuery("(min-width:900px)");
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate(); 
 
     const handleViewProjectsClick = () => {
-        navigate('/our-projects'); // Navigate to /projects
+        navigate('/our-projects'); 
     };
 
     return (
@@ -172,11 +172,11 @@ export const HomeProjects = () => {
                             fontFamily: "Roboto",
                             display: { xs: "none", sm: "none", md: "block" },
                             borderRadius: "5px",
-                            transition: 'all 0.2s ease-in-out', // Add a smooth transition
+                            transition: 'all 0.2s ease-in-out', 
                             '&:hover': {
-                                backgroundColor: '#003B8D', // Change background color on hover
-                                transform: 'scale(1.02)',   // Slightly scale up on hover
-                                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)', // Add a subtle shadow
+                                backgroundColor: '#003B8D', 
+                                transform: 'scale(1.02)',   
+                                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)', 
                             },
                         }}
                         onClick={handleViewProjectsClick}

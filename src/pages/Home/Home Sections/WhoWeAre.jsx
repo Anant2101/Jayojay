@@ -5,7 +5,7 @@ import rightImg from "../../../Assets/Home/Whatwedo/shape.webp";
 import certificate from "../../../Assets/Home/Whatwedo/certified.webp";
 import vector from "../../../Assets/Home/Whatwedo/Vector.webp";
 import whoWeAreData from './JSON/whoWeAreData.json';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const WhoWeAre = () => {
     const navigate = useNavigate();
@@ -20,11 +20,16 @@ export const WhoWeAre = () => {
                             justifyContent: "center",
                             alignItems: "center",
                             height: "100%",
+
                         }}
                     >
                         <img
                             src={leftImg}
                             alt="Who We Are"
+                            fetchPriority="high"
+                            decoding="async"
+                            width="600"
+                            height="400"
                             style={{
                                 maxWidth: "100%",
                                 width: { xs: '80%', sm: '80%', md: '100%' },
@@ -115,10 +120,8 @@ export const WhoWeAre = () => {
                                         alignItems: "center",
                                         padding: 2,
                                         gap: 2,
-                                        // borderRadius: "4px",
                                     }}
                                 >
-                                    {/* Remove this insteed use something else */}
                                     <Box
                                         component="img"
                                         src={certificate}
@@ -182,14 +185,14 @@ export const WhoWeAre = () => {
                                 width: "252px",
                                 height: "58px",
                                 margin: {
-                                    xs: "0 auto", // Center the button on small screens
-                                    md: "0", // Default margin for larger screens
+                                    xs: "0 auto",
+                                    md: "0",
                                 },
-                                transition: 'all 0.2s ease-in-out', // Add a smooth transition
+                                transition: 'all 0.2s ease-in-out',
                                 '&:hover': {
-                                    backgroundColor: '#003B8D', // Change background color on hover
-                                    transform: 'scale(1.02)',   // Slightly scale up on hover
-                                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)', // Add a subtle shadow
+                                    backgroundColor: '#003B8D',
+                                    transform: 'scale(1.02)',
+                                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
                                 },
                             }}
                         >
